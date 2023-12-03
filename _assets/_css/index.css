@@ -1,0 +1,39 @@
+@font-face {
+    font-family: "metropolis-400";
+    src: url('../_fonts/Metropolis-Light.ttf');
+    font-display: auto;
+}
+@font-face {
+    font-family: "metropolis-500";
+    src: url('../_fonts/Metropolis-Medium.ttf');
+    font-display: auto;
+}
+@font-face {
+    font-family: "metropolis-600";
+    src: url('../_fonts/Metropolis-SemiBold.ttf');
+    font-display: auto;
+}
+@font-face {
+    font-family: "metropolis-700";
+    src: url('../_fonts/Metropolis-Bold.ttf');
+    font-display: auto;
+}
+
+:root {
+    --enthu-purple: #6300DF;
+    --enthu-textdark-black: #333;
+    --enthu_pink: #FF1472;
+    --enthu-green: #27AE60;
+    --star-rating: #FFBF00;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: metropolis-400, verdana;
+    height: 100%;
+    background-color: #fff;
+}
