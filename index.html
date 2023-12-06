@@ -9,12 +9,15 @@
     <title>Enthuziastic</title>
     
     <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <!-- <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet"> -->
     <link rel="stylesheet" href="./_assets/_css/index.css">
 
     <script>
         tailwind.config = {
             theme: {
+                borderWidth: {
+                    '0.5': '0.5px',
+                },
                 extend: {
                     fontFamily: {
                         'metropolis-400': ['metropolis-thin'],
@@ -26,12 +29,14 @@
                         'enthu-purple': '#6300DF',
                         'enthu-dark-black': '#333',
                         'enthu-pink': '#FF1472',
+                        'light-enthu-pink': '#FF147280',
                         'enthu-lightestpink': '#FFF1F7',
                         'enthu-green': '#27AE60',
                         'star-rating': '#FFBF00',
                         'gray-900': '#111928',
                         'gray-500': '#6B7280',
                         'text-gray': '#717171',
+                        'gray-3' : '#fcfcfc',
                         'light-border': '#c4c4c480',
                         'lightest-peach': '#ffbc0033',
                         'light-peach': '#ffbc004d',
@@ -61,7 +66,15 @@
                 </button>
             </div>
             <ul class="flex items-center hidden lg:flex">
-                <li class="mr-6 xl:mr-8 text-sm xl:text-base font-metropolis-500 text-enthu-dark-black"><a href="#">Courses</a></li>
+                <li class="mr-6 xl:mr-8 text-sm xl:text-base font-metropolis-500 text-enthu-dark-black">
+                    <a href="#"><select name="courses" id="course" class="border-0 focus-visible:outline-white">
+                        <option value="volvo">Courses</option>
+                        <option value="saab">One</option>
+                        <option value="opel">Two</option>
+                        <option value="audi">Three</option>
+                    </select>
+                    </a>
+                </li>
                 <li class="mr-6 xl:mr-8 text-sm xl:text-base font-metropolis-500 text-enthu-dark-black"><a href="#">Activities</a></li>
                 <li class="mr-6 xl:mr-8 text-sm xl:text-base font-metropolis-500 text-enthu-dark-black"><a href="#">Offers</a></li>
                 <li class="mr-6 xl:mr-8 text-sm xl:text-base font-metropolis-500 text-enthu-dark-black"><a href="#">About Us</a></li>
@@ -102,18 +115,18 @@
     </header>
     
     <section class="my-5 flex items-center justify-between py-4 px-10 shadow-3xl bg-gradient-to-r from-lightest-peach to-lightest-peach bg-opacity-20 bg-white flex-col md:flex-row">
-        <h2 class=" text-2xl font-metropolis-500 text-enthu-purple"> You Are Invited To Join This Batch</h2>
+        <h1 class=" text-2xl font-metropolis-500 text-enthu-purple"> You Are Invited To Join This Batch</h1>
         <button type="button" class="mt-5 w-64 text-lg font-metropolis-600 text-white bg-enthu-green py-3.5 rounded-lg md:mt-0 lg:w-btn-spacing">Accept & Proceed to Pay</button>
     </section>
     
-    <section class="my-5 py-2.5 pb-3 shadow-3xl">
-        <div class="container mx-auto flex items-center justify-between flex-col lg:flex-row">
-            <button type="button" class="flex items-center justify-start text-enthu-dark-black self-start lg:self-center mb-5 lg:mb-0">
-                <img class="mr-3 text-xl font-metropolis-400" src="./_assets/_images/_svg/arrow-left.svg" alt="">
+    <section class="my-5 py-2.5 pb-3 shadow-3xl bg-gray-3">
+        <div class="container px-5 mx-auto flex items-center justify-between flex-col lg:flex-row">
+            <button type="button" class="flex items-center justify-start text-xl font-metropolis-400 text-enthu-dark-black self-start mt-2.5 mb-5 lg:mb-0">
+                <img class="mr-3" src="./_assets/_images/_svg/arrow-left.svg" alt="">
                 Back
             </button>
             <div class="flex flex-col items-center mb-5 lg:mb-0">
-                <h4 class=" text-xl font-metropolis-500 mb-3 text-enthu-purple">Accepting Students</h4>
+                <h2 class=" text-xl font-metropolis-500 mb-3 text-enthu-purple">Accepting Students</h2>
                 <p class=" text-xl font-metropolis-500 text-enthu-pink py-3.5 px-6 rounded-full border border-enthu-pink">Last date for applying <span class=" text-xl font-metropolis-600">28 March, 2023</span></p>
             </div>
             <div class="self-center mb-5 lg:mb-0 lg:self-start">
@@ -125,47 +138,47 @@
         </div>
     </section>
 
-    <section class="mt-11 mb-12 px-5 pt-6 pb-2.5 container mx-auto">
+    <section class="mt-5 mb-8 px-5 py-6 container mx-auto">
         <div class="">
-            <p class="mb-5 text-xl font-metropolis-600 text-enthu-dark-black">Your Course</p>
-            <div class="p-3.5 flex items-center justify-start relative shadow-3xl flex-col sm:flex-row">
-                <img class="mr-0 w-full mb-5 sm:w-44 sm:mb-0 sm:mr-5" src="./_assets/_images/courses/course-violin.jpg" alt="">
+            <h2 class="mb-5 text-xl font-metropolis-600 text-enthu-dark-black">Your Course</h2>
+            <div class="p-3.5 flex items-center justify-start relative shadow-3xl flex-col sm:flex-row rounded-lg border-0.5 border-light-enthu-pink">
+                <img class="mr-0 mb-5 sm:h-44 sm:mb-0 sm:mr-5 rounded-lg" src="./_assets/_images/courses/course-violin.jpg" alt="">
                 <div class="">
-                    <p class="px-3 py-1 text-sm font-metropolis-500 text-enthu-dark-black absolute top-4 right-4 rounded bg-gradient-to-r from-peach to-peach">Not Started</p>
+                    <p class="px-3 pt-0.5 text-sm font-metropolis-500 text-enthu-dark-black absolute top-3.5 right-3.5 rounded bg-gradient-to-r from-peach to-peach">Not Started</p>
                     <h2 class="mb-5 text-2xl leading-9 font-metropolis-600 text-enthu-pink">Violin</h2>
                     <p class="mb-7 text-base leading-5 font-metropolis-400 text-enthu-dark-black">Learn to play violin with expert music teachers online at Enthuziastic. Start from scratch and learn to play popular melodies. Kids or adults, anybody can join this course and start learning violin.
                     </p>
                     <div class="flex items-center justify-between flex-col lg:flex-row">
                         <div class="grid grid-cols-1 self-start md:grid-cols-2 xl:grid-cols-3 ">
-                            <div class="mb-1 flex items-center justify-start">
+                            <div class="flex items-center justify-start">
                                 <img class="mr-3" src="./_assets/_images/_svg/check-circle.svg" alt="">
                                 <h3 class="text-base font-metropolis-400 text-thu-dark-black pr-4"><span class="font-metropolis-600">120 live</span> tutoring sessions</h3>
                             </div>
-                            <div class="mb-1 flex items-center justify-start">
+                            <div class="flex items-center justify-start">
                                 <img class="mr-3" src="./_assets/_images/_svg/check-circle.svg" alt="">
                                 <h3 class="text-base font-metropolis-400 text-thu-dark-black pr-4">Access on <span class="font-metropolis-600">mobile and web</span> </h3>
                             </div>
-                            <div class="mb-1 flex items-center justify-start">
+                            <div class="flex items-center justify-start">
                                 <img class="mr-3" src="./_assets/_images/_svg/check-circle.svg" alt="">
                                 <h3 class="text-base font-metropolis-400 text-thu-dark-black pr-4">Access on <span class="font-metropolis-600">mobile and web</span> </h3>
                             </div>
-                            <div class="mb-1 flex items-center justify-start">
+                            <div class="flex items-center justify-start">
                                 <img class="mr-3" src="./_assets/_images/_svg/check-circle.svg" alt="">
                                 <h3 class="text-base font-metropolis-400 text-thu-dark-black pr-4"><span class="font-metropolis-600">12 Modules</span></h3>
                             </div>
-                            <div class="mb-1 flex items-center justify-start">
+                            <div class="flex items-center justify-start">
                                 <img class="mr-3" src="./_assets/_images/_svg/check-circle.svg" alt="">
                                 <h3 class="text-base font-metropolis-400 text-thu-dark-black pr-4"><span class="font-metropolis-600">Certificate</span> of completion</h3>
                             </div>
-                            <div class="mb-1 flex items-center justify-start">
+                            <div class="flex items-center justify-start">
                                 <img class="mr-3" src="./_assets/_images/_svg/check-circle.svg" alt="">
                                 <h3 class="text-base font-metropolis-400 text-thu-dark-black pr-4"><span class="font-metropolis-600">Certificate</span> of completion</h3>
                             </div>
                         </div>
                         <div class="pt-7 self-end lg:pt-0">
-                            <button type="button" class="flex items-center justify-start shadow-3xl font-metropolis-500 text-white bg-enthu-pink px-6 py-2 rounded-lg">
+                            <button type="button" class="flex items-center justify-start shadow-3xl text-white bg-enthu-pink px-6 py-2 rounded-lg">
                                 <img src="./_assets/_images/_svg/document-text.svg" alt="">
-                                <span>Curriculum</span>
+                                <span class="font-metropolis-500 text-lg">Curriculum</span>
                             </button>
                         </div>
                     </div>
@@ -187,36 +200,36 @@
             </div>
         </div>
         <div class="flex items-center justify-start mt-10 mb-12 flex-col md:flex-row">
-            <div class="basis-full md:basis-2/5 xl:basis-1/3 rounded-xl bg-enthu-lightestpink pt-0 pb-6">
-                <h4 class="py-3.5 px-4 xl:px-6 mb-4 text-sm xl:text-base font-metropolis-500 rounded-t-lg text-enthu-dark-black bg-gradient-to-r from-light-peach to-light-peach bg-opacity-30 bg-white">Batch No.: 1234567</h4>
-                <ul class="pb-2 px-4 xl:px-6 border-b border-light-border">
+            <sidebar class="basis-full md:basis-2/5 xl:basis-1/3 rounded-xl bg-enthu-lightestpink pt-0 pb-6">
+                <h4 class="py-2.5 px-4 xl:px-6 mb-5 text-sm xl:text-base font-metropolis-500 rounded-t-xl text-enthu-dark-black bg-gradient-to-r from-light-peach to-light-peach bg-opacity-30 bg-white">Batch No.: 1234567</h4>
+                <ul class=" mx-4 xl:mx-6 border-b border-light-border">
                     <li class="mb-3.5 flex items-center justify-start text-sm xl:text-base font-metropolis-400 text-enthu-dark-black"><img class="mr-4" src="./_assets/_images/_svg/play.svg" alt=""> Sessions: <span class="font-metropolis-500 text-lg xl:text-xl">&nbsp;24</span></li>
                     <li class="mb-3.5 flex items-center justify-start text-sm xl:text-base font-metropolis-400 text-enthu-dark-black"><img class="mr-4" src="./_assets/_images/_svg/user-group.svg" alt=""> Max. Learners: <span class="font-metropolis-500 text-lg xl:text-xl">&nbsp;4</span></li>
                     <li class="mb-3.5 flex items-center justify-start text-sm xl:text-base font-metropolis-400 text-enthu-dark-black"><img class="mr-4" src="./_assets/_images/_svg/translate.svg" alt=""> Language: <span class="font-metropolis-500 text-lg xl:text-xl">&nbsp;English</span></li>
                     <li class="mb-3.5 flex items-center justify-start text-sm xl:text-base font-metropolis-400 text-enthu-dark-black"><img class="mr-4" src="./_assets/_images/_svg/user.svg" alt=""> Age Group: <span class="font-metropolis-500 text-lg xl:text-xl">&nbsp;12 to 24</span></li>
-                    <li class="mb-3.5 flex items-center justify-start text-sm xl:text-base font-metropolis-400 text-enthu-dark-black"><img class="mr-4" src="./_assets/_images/_svg/calendar.svg" alt=""> Start Date: <span class="font-metropolis-500 text-lg xl:text-xl">&nbsp;10 August 2023</span></li>
+                    <li class="mb-6 flex items-center justify-start text-sm xl:text-base font-metropolis-400 text-enthu-dark-black"><img class="mr-4" src="./_assets/_images/_svg/calendar.svg" alt=""> Start Date: <span class="font-metropolis-500 text-lg xl:text-xl">&nbsp;10 August 2023</span></li>
                 </ul>
-                <div class="pt-6 px-4 xl:px-6 pb-12 border-b border-light-border">
-                    <h5 class="mb-2.5 text-sm xl:text-base font-metropolis-500 text-gray-900">Schedule <span class="font-metropolis-600">(Session/ Week -4)</span></h5>
-                    <ul class="flex items-center justify-start">
-                        <li class="w-7 h-7 mr-2 relative text-xs font-metropolis-500 flex items-center justify-center rounded-lg text-text-gray">Su<span class="absolute left-0 top-8 text-xs font-metropolis-400 hidden">08:00<br>AM</span></li>
-                        <li class="w-7 h-7 mr-2 relative text-xs font-metropolis-500 flex items-center justify-center rounded-lg text-text-gray">M<span class="absolute left-0 top-8 text-xs font-metropolis-400 hidden">08:00<br>AM</span></li>
-                        <li class="w-7 h-7 mr-2 relative text-xs font-metropolis-500 flex items-center justify-center rounded-lg text-text-gray">T<span class="absolute left-0 top-8 text-xs font-metropolis-400 hidden">08:00<br>AM</span></li>
-                        <li class="w-7 h-7 mr-2 relative text-xs font-metropolis-500 flex items-center justify-center rounded-lg bg-enthu-pink text-white">W<span class="absolute left-0 top-8 text-xs font-metropolis-400 ">08:00<br>AM</span></li>
-                        <li class="w-7 h-7 mr-2 relative text-xs font-metropolis-500 flex items-center justify-center rounded-lg bg-enthu-pink text-white">Th<span class="absolute left-0 top-8 text-xs font-metropolis-400 ">08:00<br>AM</span></li>
-                        <li class="w-7 h-7 mr-2 relative text-xs font-metropolis-500 flex items-center justify-center rounded-lg text-text-gray">F<span class="absolute left-0 top-8 text-xs font-metropolis-400 hidden">08:00<br>AM</span></li>
-                        <li class="w-7 h-7 mr-2 relative text-xs font-metropolis-500 flex items-center justify-center rounded-lg text-text-gray">S<span class="absolute left-0 top-8 text-xs font-metropolis-400 hidden">08:00<br>AM</span></li>
+                <div class="mt-6 mx-4 xl:mx-6 border-b border-light-border">
+                    <h4 class="mb-2.5 text-sm xl:text-base font-metropolis-500 text-gray-900">Schedule <span class="font-metropolis-600">(Session/ Week -4)</span></h4>
+                    <ul class="flex items-center justify-between mb-14">
+                        <li class="w-7 h-7 mr-2 relative text-xs font-metropolis-500 flex items-center justify-center rounded-lg bg-white border border-light-border text-text-gray">Su<span class="absolute left-0 top-8 text-xs font-metropolis-400 hidden">08:00<br>AM</span></li>
+                        <li class="w-7 h-7 mr-2 relative text-xs font-metropolis-500 flex items-center justify-center rounded-lg bg-white border border-light-border text-text-gray">M<span class="absolute left-0 top-8 text-xs font-metropolis-400 hidden">08:00<br>AM</span></li>
+                        <li class="w-7 h-7 mr-2 relative text-xs font-metropolis-500 flex items-center justify-center rounded-lg bg-white border border-light-border text-text-gray">T<span class="absolute left-0 top-8 text-xs font-metropolis-400 hidden">08:00<br>AM</span></li>
+                        <li class="w-7 h-7 mr-2 relative text-xs font-metropolis-500 flex items-center justify-center rounded-lg bg-enthu-pink text-white">W<span class="absolute left-0 top-8 text-xs font-metropolis-400 text-text-gray">08:00<br>AM</span></li>
+                        <li class="w-7 h-7 mr-2 relative text-xs font-metropolis-500 flex items-center justify-center rounded-lg bg-enthu-pink text-white">Th<span class="absolute left-0 top-8 text-xs font-metropolis-400 text-text-gray">08:00<br>AM</span></li>
+                        <li class="w-7 h-7 mr-2 relative text-xs font-metropolis-500 flex items-center justify-center rounded-lg bg-white border border-light-border text-text-gray">F<span class="absolute left-0 top-8 text-xs font-metropolis-400 hidden">08:00<br>AM</span></li>
+                        <li class="w-7 h-7 mr-2 relative text-xs font-metropolis-500 flex items-center justify-center rounded-lg bg-white border border-light-border text-text-gray">S<span class="absolute left-0 top-8 text-xs font-metropolis-400 hidden">08:00<br>AM</span></li>
                     </ul>
                 </div>
-                <div class="mt-6 px-4 xl:px-6 mb-3.5">
-                    <h5 class="mb-1.5 text-sm xl:text-base font-metropolis-400 text-gray-500">Host / Teacher</h5>
+                <div class="pt-6 px-4 xl:px-6 mb-3.5">
+                    <h4 class="mb-2 text-sm xl:text-base font-metropolis-400 text-gray-500">Host / Teacher</h4>
                     <div class="flex items-center justify-start">
                         <img class="w-10 h-10 mr-3.5" src="./_assets/_images/hosts/host.png" alt="">
                         <div>
                             <h5 class="text-sm xl:text-base leading-5">Avinash Dave</h5>
                             <div class="flex items-center justify-start">
-                                <span class="mr-2.5 text-sm xl:text-base font-metropolis-500 text-star-rating">4.5</span>
-                                <span class="flex items-center justify-start">
+                                <span class="mr-2.5 text-sm xl:text-base leading-4 xl:leading-4 font-metropolis-500 text-star-rating">4.5</span>
+                                <span class="flex items-center justify-start self-start">
                                     <svg class="fill-star-rating stroke-star-rating stroke-1" xmlns="http://www.w3.org/2000/svg" width="16" height="14" viewBox="0 0 16 14" fill="none">
                                         <path d="M8 1L10.0085 4.94953L14.5 5.58675L11.25 8.65931L12.017 13L8 10.9495L3.983 13L4.75 8.65931L1.5 5.58675L5.9915 4.94953L8 1Z" fill="#FFBF00" stroke="#FFBF00" stroke-width="1.69565" stroke-linecap="round" stroke-linejoin="round"/>
                                     </svg>
@@ -233,23 +246,23 @@
                                         <path d="M8 1L10.0085 4.94953L14.5 5.58675L11.25 8.65931L12.017 13L8 10.9495L3.983 13L4.75 8.65931L1.5 5.58675L5.9915 4.94953L8 1Z" fill="#FFBF00" stroke="#FFBF00" stroke-width="1.69565" stroke-linecap="round" stroke-linejoin="round"/>
                                     </svg>
                                 </span>
-                                <span class="ml-2.5 text-sm xl:text-base leading-5 font-metropolis-500 text-enthu-dark-black">(120)</span>
+                                <span class="ml-2.5 text-sm xl:text-base leading-4 xl:leading-4 font-metropolis-500 text-enthu-dark-black">(120)</span>
                             </div>
                         </div>
                     </div>
                 </div>
                 <div class="px-4 xl:px-6">
-                    <h5 class="mb-1.5 text-sm xl:text-base font-metropolis-400 text-gray-500">Enrolled Learners</h5>
+                    <h4 class="mb-1.5 text-sm xl:text-base font-metropolis-400 text-gray-500">Enrolled Learners</h4>
                     <div class="flex items-center justify-start">
-                        <img class="w-8 h-8" src="./_assets/_images/learners/learner-1.png" alt="">
-                        <img class="w-8 h-8" src="./_assets/_images/learners/learner-2.png" alt="">
-                        <img class="w-8 h-8" src="./_assets/_images/learners/learner-3.png" alt="">
+                        <img class="w-8 h-8 -ml-1.5" src="./_assets/_images/learners/learner-1.png" alt="">
+                        <img class="w-8 h-8 -ml-1.5" src="./_assets/_images/learners/learner-2.png" alt="">
+                        <img class="w-8 h-8 -ml-1.5" src="./_assets/_images/learners/learner-3.png" alt="">
                     </div>
                 </div>
-            </div>
-            <div class="basis-full md:basis-3/5 xl:basis-2/3 py-5 md:px-2.5 md:ml-6">
+            </sidebar>
+            <article class="basis-full md:basis-3/5 xl:basis-2/3 pt-5 md:ml-10">
                 <h3 class="text-xl font-metropolis-600 text-enthu-dark-black">Curriculum</h3>
-                <p class="py-6 px-4 text-sm leading-6 lg:leading-8 lg:text-base font-metropolis-400 text-black rounded-lg border border-light-border">
+                <p class="py-4 px-4 text-sm leading-6 lg:leading-7 lg:text-base font-metropolis-400 text-black rounded-lg border border-light-border">
                     The violin course is designed to provide comprehensive instruction and guidance for beginners and intermediate learners looking to master the art of playing the violin. Throughout the course, students will receive a well-structured curriculum that covers the essential aspects of violin playing, from the basics to more advanced techniques.
                     <br><br>
                     The course begins with an introduction to the violin, its parts, and how to properly hold the instrument and the bow. Students will learn the fundamentals of reading sheet music and understanding musical notation specific to the violin.
@@ -259,23 +272,24 @@
                     The violin course will also cover music theory relevant to the instrument, enabling students to grasp the principles of harmony, rhythm, and musical expression, enhancing their overall musicianship.
                     <br><br>
                     In addition to individual practice, the course may include ensemble playing opportunities, providing students with the chance to collaborate with other musicians and develop their ensemble skills.
-                    By the end of the course, students should have gained a solid foundation in violin playing, a good understanding of music theory, and the ability to perform various pieces confidently. Whether pursuing a professional music career or playing the violin for personal enjoyment.</p>
-            </div>
+                    By the end of the course, students should have gained a solid foundation in violin playing
+                </p>
+            </article>
         </div>
         <div class="flex items-center justify-start mt-12">
             <div class="flex flex-col items-start justify-start basis-1/2 md:basis-1/3">
-                <h6 class="text-sm font-metropolis-400 text-text-gray">Pro Rate Price</h6>
+                <h4 class="text-sm font-metropolis-400 text-text-gray">Pro Rate Price</h4>
                 <div class="text-3xl font-metropolis-700 text-gray-900">$ 28.89<br class="sm:hidden"> <span class="text-sm font-metropolis-500">(14 sessions)</span></div>
             </div>
-            <div class="ml-0 flex items-center justify-between w-full gap-y-4 flex-col md:flex-row md:gap-x-4 basis-1/2 md:basis-2/3 md:ml-6">
+            <div class="ml-0 flex items-center justify-between w-full gap-y-4 flex-col md:flex-row md:gap-x-4 basis-1/2 md:basis-2/3 md:ml-10">
                 <button class="basis-1/2 text-lg font-metropolis-500 text-white bg-enthu-pink py-3.5 rounded-lg w-full md:w-1/2" type="button">Apply To Learn</button>
                 <button class="basis-1/2 text-lg font-metropolis-500 text-enthu-pink py-3.5 rounded-lg border border-enthu-pink w-full md:w-1/2" type="button">Apply To Teach</button>
             </div>
         </div>
     </section>
 
-    <footer class="mt-14 text-white bg-enthu-purple px-5">
-        <div class="pt-16 pb-12 flex align-start justify-start container mx-auto border-b border-light-border flex-col lg:flex-row">
+    <footer class="mt-8 text-white bg-enthu-purple">
+        <div class="pt-16 pb-12 px-5 flex align-start justify-start container mx-auto border-b border-light-border flex-col lg:flex-row">
             <div class="mr-0 lg:mr-16 xl:mr-24">
                 <div class="mb-5">
                     <img class="h-10" src="./_assets/_images/logos/secondary-logo.png" alt="">
@@ -337,7 +351,7 @@
             </div>
             
         </div>
-        <div class="py-7 flex justify-center text-base font-metropolis-500 container mx-auto">
+        <div class="py-7 flex justify-center text-base font-metropolis-500 container px-5 mx-auto">
             &copy; 2023 EnthuZiastic, Inc. All rights reserved
         </div>
     </footer>
